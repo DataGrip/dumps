@@ -53,4 +53,10 @@ DROP SEQUENCE rental_rental_id_seq;
 DROP SEQUENCE staff_staff_id_seq;
 DROP SEQUENCE store_store_id_seq;
 
+
+--- DROP TYPES
+DROP TYPE mpaa_rating;
+
+
+--- DROP DOMAINS
 DROP DOMAIN year;
