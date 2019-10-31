@@ -24,11 +24,11 @@ create table actor (
 );
 
 create type mpaa_rating as enum (
-    'g',
-    'pg',
-    'pg-13',
-    'r',
-    'nc-17'
+    'G',
+    'PG',
+    'PG-13',
+    'R',
+    'NC-17'
 );
 
 create domain year as integer
@@ -79,7 +79,7 @@ create table film (
     rental_rate numeric(4,2) default 4.99 not null,
     length smallint,
     replacement_cost numeric(5,2) default 19.99 not null,
-    rating mpaa_rating default 'g'::mpaa_rating,
+    rating mpaa_rating default 'G'::mpaa_rating,
     last_update timestamp without time zone default now() not null,
     special_features text[],
     fulltext tsvector not null
@@ -783,4 +783,3 @@ alter table only store
 
 alter table only store
     add constraint store_manager_staff_id_fkey foreign key (manager_staff_id) references staff(staff_id) on update cascade on delete restrict;
--; owner: postgres
