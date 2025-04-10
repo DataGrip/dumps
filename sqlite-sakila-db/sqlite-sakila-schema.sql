@@ -29,13 +29,13 @@ CREATE  INDEX idx_actor_last_name ON actor(last_name)
  
 CREATE TRIGGER actor_trigger_ai AFTER INSERT ON actor
  BEGIN
-  UPDATE actor SET last_update2 = DATETIME('NOW')  WHERE rowid = new.rowid;
+  UPDATE actor SET last_update = DATETIME('NOW')  WHERE rowid = new.rowid;
  END
 ;
  
 CREATE TRIGGER actor_trigger_au AFTER UPDATE ON actor
  BEGIN
-  UPDATE actor SET last_update2 = DATETIME('NOW')  WHERE rowid = new.rowid;
+  UPDATE actor SET last_update = DATETIME('NOW')  WHERE rowid = new.rowid;
  END
 ;
 
